@@ -1,2 +1,20 @@
 @import 'variables';
 
+.btn {
+    padding:12px 18px;
+    font-size:var(--app-font-small);
+    color:#fff;
+    border:0;
+}
+
+.btn-primary {
+    background-color: var(--app-primary);
+}
+
+.btn-secondary {
+    background-color: var(--app-secondary);
+}
+
+.btn-success {
+    background-color: var(--app-success);
+} 

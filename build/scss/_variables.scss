@@ -29,17 +29,32 @@ $global-white: #ffffff;
 
 
 // setup
-$setup: (
+$colors: (
     'primary': $global-primary,
     'secondary': $global-secondary,
     'success': $global-success
+)!default;
+
+$sizes: (
+    'font-default': $size-font-base,
+    'font-small': $size-font-medium,
+    'font-medium': $size-font-medium,
+    'font-large': $size-font-large
 )!default;
 
 // Prefix for :root CSS variables
 $variable-prefix: app- !default;
 
 :root {
-    @each $color, $value in $setup {
+    @each $color, $value in $colors {
         --#{$variable-prefix}#{$color}: #{$value};
       }
+
+      @each $size, $value in $sizes {
+        --#{$variable-prefix}#{$size}: #{$value};
+      }
 }
+
+// @each $size, $value in $sizes {
+//     font-size-#{$value}:0;
+// }
