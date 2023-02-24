@@ -1,0 +1,45 @@
+
+// Do not edit directly
+// Generated on Fri, 24 Feb 2023 20:24:35 GMT
+
+$color-base-gray-light: #cccccc;
+$color-base-gray-medium: #999999;
+$color-base-gray-dark: #111111;
+$color-base-red: #ff0000;
+$color-base-green: #00ff00;
+$color-font-base: #ff0000;
+$color-font-secondary: #00ff00;
+$color-font-tertiary: #cccccc;
+$size-font-small: 0.75rem; // the small size of the font
+$size-font-medium: 1rem; // the medium size of the font
+$size-font-large: 2rem; // the large size of the font
+$size-font-base: 1rem; // the base size of the font
+$global-primary: #0d6efd;
+$global-secondary: #6c757d;
+$global-success: #198754;
+$global-danger: #dc3545;
+$global-light: #f8f9fa;
+$global-dark: #212529;
+$global-space-1: 0.25rem;
+$global-space-2: 0.5rem;
+$global-space-3: 1rem;
+$global-space-4: 1.5rem;
+$global-space-5: 3rem;
+$global-white: #ffffff;
+
+
+// setup
+$setup: (
+    'primary': $global-primary,
+    'secondary': $global-secondary,
+    'success': $global-success
+)!default;
+
+// Prefix for :root CSS variables
+$variable-prefix: app- !default;
+
+:root {
+    @each $color, $value in $setup {
+        --#{$variable-prefix}#{$color}: #{$value};
+      }
+}
