@@ -1,5 +1,36 @@
 @import 'variables';
 
+// setup
+$colors: (
+    'primary': $app-primary,
+    'secondary': $app-secondary,
+    'success': $app-success
+)!default;
+
+$sizes: (
+    'font-default': $size-font-base,
+    'font-small': $size-font-medium,
+    'font-medium': $size-font-medium,
+    'font-large': $size-font-large
+)!default;
+
+// Prefix for :root CSS variables
+$variable-prefix: app- !default;
+
+:root {
+    @each $color, $value in $colors {
+        --#{$variable-prefix}#{$color}: #{$value};
+      }
+
+      @each $size, $value in $sizes {
+        --#{$variable-prefix}#{$size}: #{$value};
+      }
+}
+
+// @each $size, $value in $sizes {
+//     font-size-#{$value}:0;
+// }
+
 .btn {
     padding:12px 18px;
     font-size:var(--app-font-small);
